@@ -4,5 +4,17 @@
    "editor.codeActionsOnSave": {
       "source.fixAll.eslint": true
    },
-   "python.defaultInterpreterPath": "api/.venv/Scripts/python.exe"
+   "python.defaultInterpreterPath": "api/.venv/Scripts/python.exe",
+   "python.linting.pycodestyleEnabled": true,
+   "python.linting.pycodestyleArgs": ["--max-line-length=90"],
+   "python.linting.pylintEnabled": true,
+   "python.formatting.provider": "black",
+   "[python]": {
+      "editor.defaultFormatter": null,
+      "editor.insertSpaces": true,
+      "editor.tabSize": 4,
+      "editor.formatOnSave": true
+   },
+   "editor.formatOnSave": true,
+   "pythonIndent.trimLinesWithOnlyWhitespace": true
 }
