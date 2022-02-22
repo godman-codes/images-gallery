@@ -3,6 +3,7 @@ from flask import Flask, request
 import requests
 from dotenv import load_dotenv
 from flask_cors import CORS
+from random import randint
 
 load_dotenv(dotenv_path="./.env.local")
 
@@ -32,6 +33,7 @@ def new_image():
         data = response.json()
     else:
         data = {
+            "id": f"{randint(1,200)}",
             "description": "can't get image",
             "alt_description": "image not found",
             "urls": {
