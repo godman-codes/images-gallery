@@ -27,7 +27,17 @@ def new_image():
     headers = {"Accept-Version": "v1", "Authorization": "Client-ID " + UNSPLASH_KEY}
     params = {"query": word}
     response = requests.get(url=UNSPLASH_URL, headers=headers, params=params)
-    data = response.json()
+    print(type(response))
+    if response:
+        data = response.json()
+    else:
+        data = {
+            "description": "can't get image",
+            "alt_description": "image not found",
+            "urls": {
+                "small": "https://images.unsplash.com/photo-1623018035782-b269248df916?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+            },
+        }
     return data
 
 
